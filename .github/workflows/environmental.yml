@@ -15,5 +15,5 @@ jobs:
       ENV_NAME: ${{ vars.environment-name }}
       PASSWORD: ${{ secrets.password }}
     steps:
-      - run: echo "${USERNAME}"
-      - run: echo "${PASSWORD:0:1}${PASSWORD#?}"
+      - run: echo "${{ USER_NAME }}"
+      - run: echo "${{ PASSWORD:0:1 }}${{ PASSWORD#? }}"
